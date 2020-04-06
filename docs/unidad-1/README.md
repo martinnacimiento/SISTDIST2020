@@ -40,3 +40,32 @@ Esto significa que los nodos necesitan colaborar. Cómo establecer esa colaborac
 - Es importante darse cuenta de que la organización de nodos requiere un esfuerzo especial y que a veces es una de las partes más complejas de la administración de sistemas distribuidos.
 
 #### Característica 2: Único sistema coherente
+- Un SD debe parecer como un único sistema coherente.
+- Algunos investigares van más allá, diciendo que debe ser una vista de sistema único.
+- **Vista de sistema único**: significa que los usuarios finales no deben darse cuenta que están lidiando con el hecho que los procesos, los datos y el control están dispersos en una red informática.
+- A menudo esto es pedir demasiado, por lo cual se optó por algo más tenue, que es que debe parecer **coherente**.
+- Más o menos, un SD es coherente cuando se comporta de acuerdo a las expectativas de sus usuarios.
+- Más específicamente, en un único sistema coherente la colección de nodos como un todo operan igual, no importa dónde, cuándo, y cómo interactúan entre sistema y usuario.
+- ... ////////**Volver a re-leer**/////////.
+
+#### Sistemas distribuidos y Middleware
+Para asistir el desarrollo de aplicaciones distribuidas, los SD son organizados para tener **una capa de software** que es lógicamente ubicada sobre los respectivos sistemas operativos de las computadoras que son parte del sistema.
+Lo que es conocido como **middleware**.
+
+- Middleware es lo mismo para un sistema distribuido como lo que es un sistema operativo para una computadora: un **administrador de recursos** que ofrece sus aplicaciones para compartir e implementar eficientemente estos recursos a través de la red.
+- Junto a la gestión de recursos, ofrece servicios que son encontrados en la mayoría de sistemas operativos:
+  - Facilidades para la comunicación entre aplicaciones.
+  - Servicios de seguridad.
+  - Servicios de contabilidad.
+  - Enmascaramiento y recuperación de fallas.
+
+- La diferencia con el sistema operativo, es que los servicios de middleware son ofrecidos en un entorno en red.
+- Note también que la mayoría de servicios son útiles para varías aplicaciones. Por lo que el middleware puede ser visto como un **contenedor** de funciones y componentes de uso común que ya no tiene que ser implementado por aplicaciones por separado.
+- Algunos servicios de middleware:
+  - **Comunicación**: Uno común es el llamado **Llamada al procedimiento remoto** (RPC). Permite a una app invocar una función que es implementada y ejecutada en una computadora remota como si fuera localmente disponible.
+  - **Transacción**:
+  - **Composición del servicio**:
+  - **Fiabilidad**:
+
+### Objetivos de diseño
+
