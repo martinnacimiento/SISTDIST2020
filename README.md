@@ -1,6 +1,9 @@
 # Sistemas Distribuidos
 
-## Datos
+## Fundamentación 🤓
+A partir de la aparición de microprocesadores más potentes y redes de datos confiables de alta velocidad nos posibilita a organizar los sistemas en "Sistemas Distribuidos" que presentan ciertas ventajas con respecto a los sistemas centralizados. No obstante la complejidad de los mismos requieren que el profesional conozca los pros y contras de adoptarlos como así también las alternativas de diseño de dichos sistemas.
+
+## Datos 
 - 1er Cuatrimestre - 4to año
 - 🚫 No promocional
 
@@ -27,4 +30,4 @@
 ### Unidad 9 - Computación en malla (Grid computing)
 ### Unidad 10 - Computación en la nube (Cloud computing)
 
-
+## Fuentes

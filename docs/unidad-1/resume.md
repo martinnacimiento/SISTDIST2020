@@ -5,7 +5,7 @@
 La definición hace referencia a 2 características de los *SD* (Sistemas Distribuidos).
 
 1. Colección de **elementos de computo**: Un elemento de computo autónomo (capaz de comportarse independientemente uno del otro), el cual nos referiremos como **nodo** generalmente, puede ser un dispositivo de harware o un proceso de software.
-2. Los **usuarios**: pueden ser personas o aplicaciones, creen estar tratando con un único sistema.
+2. Los usuarios: pueden ser personas o aplicaciones, creen estar tratando con un **único sistema**.
 
 ## Sistemas distribuidos y Middleware
 Para asistir el desarrollo de aplicaciones distribuidas, los SD son organizados para tener **una capa de software** que es lógicamente ubicada sobre los respectivos sistemas operativos de las computadoras que son parte del sistema.

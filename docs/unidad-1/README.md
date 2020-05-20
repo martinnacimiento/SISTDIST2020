@@ -15,7 +15,7 @@
 La definición hace referencia a 2 características de los *SD* (Sistemas Distribuidos).
 
 1. Colección de **elementos de computo**: Un elemento de computo autónomo (capaz de comportarse independientemente uno del otro), el cual nos referiremos como **nodo** generalmente, puede ser un dispositivo de harware o un proceso de software.
-2. Los **usuarios**: pueden ser personas o aplicaciones, creen estar tratando con un único sistema.
+2. Los usuarios: pueden ser personas o aplicaciones, creen estar tratando con un **único sistema**.
 
 Esto significa que los nodos necesitan colaborar. Cómo establecer esa colaboración yace en el corazón del desarrollo de los sistemas distribuidos. 💓
 
@@ -46,7 +46,6 @@ Esto significa que los nodos necesitan colaborar. Cómo establecer esa colaborac
 - A menudo esto es pedir demasiado, por lo cual se optó por algo más tenue, que es que debe parecer **coherente**.
 - Más o menos, un SD es coherente cuando se comporta de acuerdo a las expectativas de sus usuarios.
 - Más específicamente, en un único sistema coherente la colección de nodos como un todo operan igual, no importa dónde, cuándo, y cómo interactúan entre sistema y usuario.
-- ... ////////**Volver a re-leer**/////////.
 
 #### Sistemas distribuidos y Middleware
 Para asistir el desarrollo de aplicaciones distribuidas, los SD son organizados para tener **una capa de software** que es lógicamente ubicada sobre los respectivos sistemas operativos de las computadoras que son parte del sistema.
@@ -69,3 +68,45 @@ Lo que es conocido como **middleware**.
 
 ### Objetivos de diseño
 
+Solo porque se puede no significa que sea buena idea construir un sistema distribuido. 4 objetivos se tienen que dar para que valga la pena el esfuerzo. Un sistema distribuido debe:
+  - Hacer los recursos fáciles de acceder.
+  - Ocultar el hecho que los recursos están distribuidos en la red.
+  - Ser abiertos.
+  - Ser escalables.
+
+#### Apoyando el intercambio de recursos
+El objetivo es hacer fácil para los usuarios (y aplicaciones) acceder y compartir recursos remoto. Las razones pueden ser tanto desde lo económico hasta como conectar usuarios y recursos hace más fácil colaborar e intercambiar información.
+
+#### Haciendo transparente la distribución
+Otro objetivo es ocultar el hecho que los procesos y recursos son físicamente distribuidos. En otras palabras intenta hacerlo transparente al usuario final y aplicaciones.
+
+Tipos de transparencias:
+- **Acceso**: Oculta las diferencias de representación de datos y cómo un objeto es accedido.
+- **Ubicación**: Oculta dónde un objeto es ubicado.
+- **Re-ubicación**: Oculta que un objeto puede ser movido a otro ubicación mientras esta en uso.
+- **Migración**: Oculta que un objeto puede moverse a otra ubicación.
+- **Replicación**: Oculta que un objeto es replicado.
+- **Concurrencia**: Oculta que un objeto puede ser compartido por varios usuarios independientes.
+- **Fallo**: Oculta el fallo y recuperación de un objeto.
+
+*Objeto puede ser un proceso o recurso.
+
+Si bien es preferible la transparencia, no es buena idea intentar dejar a ciegas al usuario de todos los aspectos de distribución. Apuntar a la transparencia de distribución puede ser un buen objetivo al diseñar e implementar sistemas distribuidos, pero que debe considerarse junto con otros temas como el **rendimiento** y la **comprensión**. El precio para lograr la transparencia total puede ser sorprendentemente alto.
+
+#### Ser abierto
+Un sistema distribuido abierto es esencialmente un sistema que ofrece componentes que pueden ser fácilmente usados o integrados dentro de otro sistema. A menudo, un sistema distribuido abierto en sí consistirá de componentes que se originan en otro lugar.
+
+##### Interoperabilidad, componibilidad, y extensibilidad
+
+Para ser abierto los componentes deben adherirse a reglas estándares que describen las **sintaxis** y **semántica** de lo que ellos ofrecen (ej. qué servicio proporcionan). Un enfoque general es definir servicios a través de **interfaces** usando un lenguaje de definición de interfaz (IDL). Una definición de interfaz escrita con un IDL solamente captura la sintaxis del servicio. La semántica es dada por medio del lenguaje natural.
+
+Las especificaciones adecuadas son *completas* y *neutrales*. Estas son importantes para la **interoperabilidad** y **portabilidad**.
+
+- **Interoperabilidad**: grado de coexistencia y trabajo en conjunto de 2 sistemas o componentes de diferente fabricante, solo confiando es sus interfaces.
+- **Portabilidad**: hasta qué punto una app para un sistema distribuido A puede ejecutarse, sin modificaciones, en uno B con las mismas interfaces.
+- **Extensibilidad**: fácil configuración de diferentes componentes, agregar y sacar componentes sin afectar al resto del sistema.
+
+##### Separar la política del mecanismo
+Para lograr flexibilidad en sistemas distribuidos abiertos, es clave organizar el sistema como una colección de componentes pequeños, reemplazables y adaptables. Esto implica no solo dar definiciones de interfaces de alto nivel (para usuarios y apps), sino también para las partes internas del sistema y cómo se conectan.
+
+La necesidad de cambiar un sistema distribuido a menudo es por un componente que no da una política óptima para un usuario o app específico.
